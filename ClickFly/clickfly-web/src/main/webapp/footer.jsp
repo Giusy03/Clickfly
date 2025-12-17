@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <footer class="site-footer">
     <div class="footer-container">
         <p>&copy; <%= java.time.Year.now() %> ClickFly. Tutti i diritti riservati.</p>

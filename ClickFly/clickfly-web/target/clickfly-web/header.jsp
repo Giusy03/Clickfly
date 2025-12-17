@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <header class="site-header">
     <div class="nav-container">
         <div class="logo-wrap">
@@ -10,13 +9,11 @@
 
         <nav class="main-nav">
             <ul>
-                <li><a href="${pageContext.request.contextPath}/">Home</a></li>
-                <li><a href="${pageContext.request.contextPath}/search.jsp">Cerca Voli</a></li>
-                <li><a href="${pageContext.request.contextPath}/offers.jsp">Offerte</a></li>
-                <li><a href="${pageContext.request.contextPath}/cart.jsp">Carrello</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/carrello.jsp">Carrello</a></li>
                 <li><a href="${pageContext.request.contextPath}/login.jsp">Login</a></li>
-                <li><a href="${pageContext.request.contextPath}/register.jsp">Registrati</a></li>
-                <li><a href="${pageContext.request.contextPath}/contact.jsp">Contatti</a></li>
+                <li><a href="${pageContext.request.contextPath}/registrati.jsp">Registrati</a></li>
+                <li><a href="${pageContext.request.contextPath}/contatti.jsp">Contatti</a></li>
             </ul>
         </nav>
     </div>

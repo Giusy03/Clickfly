@@ -1,1 +1,5 @@
+com\clickfly\util\DBManager.class
+com\clickfly\servlets\RequestDispatcher.class
+com\clickfly\servlets\TestDBServlet.class
+com\clickfly\servlets\SearchServlet.class
 com\clickfly\servlets\HomeServlet.class

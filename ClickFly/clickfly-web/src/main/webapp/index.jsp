@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/clickfly-web/css/style.css">
 </head>
 <body>
+    
     <%@ include file="header.jsp" %>
 
     <main class="container">
