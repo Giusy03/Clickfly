@@ -1,43 +1,58 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="header.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>ClickFly - Risultati della ricerca</title>
+    <!-- Collegamento al CSS -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+</head>
+<body>
 
-<main class="results-page">
-    <div class="results-container">
+    <%@ include file="header.jsp" %>
 
-        <h1 class="title">Risultati della ricerca</h1>
+    <main class="results-page">
+        <section class="results-container">
+            <h1>Risultati della ricerca</h1>
 
-        <p class="subtitle">
-            Voli da <strong>${from}</strong> a <strong>${to}</strong> il 
-            <strong>${date}</strong> per <strong>${passengers}</strong> passeggeri.
-        </p>
+            <c:choose>
+                <c:when test="${empty voli}">
+                    <p>Nessun volo trovato.</p>
+                </c:when>
+                <c:otherwise>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Partenza</th>
+                                <th>Arrivo</th>
+                                <th>Data</th>
+                                <th>Ora Partenza</th>
+                                <th>Ora Arrivo</th>
+                                <th>Prezzo</th>
+                                <th>Compagnia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="volo" items="${voli}">
+                                <tr>
+                                    <td>${volo.cittaPartenza}</td>
+                                    <td>${volo.cittaArrivo}</td>
+                                    <td>${volo.data}</td>
+                                    <td>${volo.oraPartenza}</td>
+                                    <td>${volo.oraArrivo}</td>
+                                    <td>€${volo.prezzo}</td>
+                                    <td>${volo.compagnia}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </c:otherwise>
+            </c:choose>
+        </section>
+    </main>
 
-        <div class="results-list">
+    <%@ include file="footer.jsp" %>
 
-            <!-- Risultati MOCK finché non facciamo il DB -->
-            <div class="result-card">
-                <h3>ClickAir 402</h3>
-                <p>Partenza: 09:20</p>
-                <p>Arrivo: 11:05</p>
-                <p>Prezzo: <strong>89€</strong></p>
-            </div>
-
-            <div class="result-card">
-                <h3>SkyJet 119</h3>
-                <p>Partenza: 13:45</p>
-                <p>Arrivo: 15:30</p>
-                <p>Prezzo: <strong>102€</strong></p>
-            </div>
-
-            <div class="result-card">
-                <h3>FlyGo 55</h3>
-                <p>Partenza: 18:10</p>
-                <p>Arrivo: 20:00</p>
-                <p>Prezzo: <strong>120€</strong></p>
-            </div>
-
-        </div>
-
-    </div>
-</main>
-
-<%@ include file="footer.jsp" %>
+</body>
+</html>

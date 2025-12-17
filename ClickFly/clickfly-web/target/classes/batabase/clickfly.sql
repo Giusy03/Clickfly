@@ -1,9 +1,6 @@
 CREATE DATABASE clickfly;
 USE clickfly;
 
--- ===========================
--- TAB. UTENTI
--- ===========================
 CREATE TABLE utenti (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -14,9 +11,6 @@ CREATE TABLE utenti (
     data_registrazione DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- ===========================
--- TAB. VOLI
--- ===========================
 CREATE TABLE voli (
     id INT AUTO_INCREMENT PRIMARY KEY,
     citta_partenza VARCHAR(50) NOT NULL,
@@ -29,9 +23,6 @@ CREATE TABLE voli (
     posti_disponibili INT NOT NULL DEFAULT 100
 );
 
--- ===========================
--- TAB. PRENOTAZIONI
--- ===========================
 CREATE TABLE prenotazioni (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_utente INT NOT NULL,
@@ -44,9 +35,6 @@ CREATE TABLE prenotazioni (
     FOREIGN KEY (id_volo) REFERENCES voli(id) ON DELETE CASCADE
 );
 
--- ===========================
--- TAB. CARRELLO
--- ===========================
 CREATE TABLE carrello (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_utente INT NOT NULL UNIQUE,
@@ -55,9 +43,6 @@ CREATE TABLE carrello (
     FOREIGN KEY (id_utente) REFERENCES utenti(id) ON DELETE CASCADE
 );
 
--- ===========================
--- TAB. CARRELLO_VOCI
--- ===========================
 CREATE TABLE carrello_voci (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_carrello INT NOT NULL,
@@ -68,9 +53,6 @@ CREATE TABLE carrello_voci (
     FOREIGN KEY (id_volo) REFERENCES voli(id) ON DELETE CASCADE
 );
 
--- ===========================
--- DATI DI TEST (VOLI)
--- ===========================
 INSERT INTO voli (citta_partenza, citta_arrivo, data, ora_partenza, ora_arrivo, prezzo, compagnia)
 VALUES
 ('Roma', 'Milano', '2025-02-03', '09:00', '10:10', 49.99, 'ITA Airways'),

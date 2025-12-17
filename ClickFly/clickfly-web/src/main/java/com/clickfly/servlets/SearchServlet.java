@@ -1,37 +1,39 @@
 package com.clickfly.servlets;
 
-import java.io.IOException;
+import com.clickfly.dao.VoloDAO;
+import com.clickfly.model.Volo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
+import javax.servlet.http.*;
+import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet("/search")
 public class SearchServlet extends HttpServlet {
+
+    private VoloDAO voloDAO = new VoloDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Recupero parametri dalla pagina search.jsp
         String from = request.getParameter("from");
         String to = request.getParameter("to");
-        String date = request.getParameter("date");
-        String passengers = request.getParameter("passengers");
+        String dateStr = request.getParameter("date");
 
-        // Per ora non abbiamo il DB: creiamo risultati finti (mock)
-        request.setAttribute("from", from);
-        request.setAttribute("to", to);
-        request.setAttribute("date", date);
-        request.setAttribute("passengers", passengers);
+        try {
+            Date data = Date.valueOf(dateStr);
+            List<Volo> voli = voloDAO.cercaVoli(from, to, data);
 
-        // In futuro qui chiameremo il DAO per ottenere i voli reali
+            request.setAttribute("voli", voli);
+            request.getRequestDispatcher("risultati.jsp").forward(request, response);
 
-        RequestDispatcher rd = (RequestDispatcher) request.getRequestDispatcher("risultati.jsp");
-        rd.forward(request, response);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        }
     }
 }
 

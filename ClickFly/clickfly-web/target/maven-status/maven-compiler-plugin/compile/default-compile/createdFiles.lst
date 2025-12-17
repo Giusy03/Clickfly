@@ -1,5 +1,7 @@
 com\clickfly\util\DBManager.class
 com\clickfly\servlets\RequestDispatcher.class
 com\clickfly\servlets\TestDBServlet.class
+com\clickfly\model\Volo.class
 com\clickfly\servlets\SearchServlet.class
+com\clickfly\dao\VoloDAO.class
 com\clickfly\servlets\HomeServlet.class
