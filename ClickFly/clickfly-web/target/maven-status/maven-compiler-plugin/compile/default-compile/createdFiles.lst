@@ -1,7 +1,10 @@
 com\clickfly\util\DBManager.class
 com\clickfly\servlets\RequestDispatcher.class
 com\clickfly\servlets\TestDBServlet.class
+com\clickfly\servlets\LoginServlet.class
 com\clickfly\model\Volo.class
+com\clickfly\model\Utente.class
 com\clickfly\servlets\SearchServlet.class
 com\clickfly\dao\VoloDAO.class
 com\clickfly\servlets\HomeServlet.class
+com\clickfly\servlets\RegisterServlet.class

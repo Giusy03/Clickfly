@@ -13,7 +13,7 @@
                 <li><a href="${pageContext.request.contextPath}/carrello.jsp">Carrello</a></li>
                 <li><a href="${pageContext.request.contextPath}/login.jsp">Login</a></li>
                 <li><a href="${pageContext.request.contextPath}/registrati.jsp">Registrati</a></li>
-                <li><a href="${pageContext.request.contextPath}/contatti.jsp">Contatti</a></li>
+                <li><a href="${pageContext.request.contextPath}/utente.jsp">Profilo</a></li>
             </ul>
         </nav>
     </div>

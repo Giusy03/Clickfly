@@ -164,3 +164,95 @@ body { font-family: Arial, Helvetica, sans-serif; color: #222; background: #f7f9
   color: #005fa3;
 }
 
+/* =======================
+   LOGIN & REGISTRAZIONE
+   ======================= */
+
+.login-page,
+.register-page,
+.user-page {
+  padding: 50px 0;
+  background: #f2f7ff;
+  min-height: 70vh;
+}
+
+.login-page h1,
+.register-page h1,
+.user-page h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #034a7b;
+}
+
+.login-form,
+.register-form {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.login-form .form-group,
+.register-form .form-group {
+  margin-bottom: 18px;
+}
+
+.login-form label,
+.register-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.login-form input,
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-page p,
+.register-page p {
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* =======================
+   AREA UTENTE
+   ======================= */
+
+.user-page section {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.user-info p {
+  margin-bottom: 10px;
+}
+
+.user-actions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-actions li {
+  margin-bottom: 10px;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #0077c8;
+  font-weight: 600;
+}
+
+.user-actions a:hover {
+  text-decoration: underline;
+}
