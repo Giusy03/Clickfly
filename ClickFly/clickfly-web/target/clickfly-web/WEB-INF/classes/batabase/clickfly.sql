@@ -8,7 +8,8 @@ CREATE TABLE utenti (
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     telefono VARCHAR(20),
-    data_registrazione DATETIME DEFAULT CURRENT_TIMESTAMP
+    data_registrazione DATETIME DEFAULT CURRENT_TIMESTAMP,
+    admin BOOLEAN NOT NULL
 );
 
 CREATE TABLE voli (

@@ -13,23 +13,34 @@
 <%@ include file="header.jsp" %>
 
 <main class="container">
+
   <section class="page-header">
     <h1>Carrello</h1>
     <p class="muted">Rivedi i viaggi selezionati e procedi al checkout.</p>
   </section>
 
   <c:choose>
+
     <c:when test="${empty sessionScope.carrello}">
-      <div class="empty-state">
-        <h2>Il carrello è vuoto</h2>
-        <p>Aggiungi un viaggio dal catalogo per continuare.</p>
-        <a class="cta-btn" href="${pageContext.request.contextPath}/search.jsp">Cerca voli</a>
+      <div class="card">
+        <div class="card-body empty-state">
+          <h2>Il carrello è vuoto</h2>
+          <p>Aggiungi un viaggio dal catalogo per continuare.</p>
+
+          <div class="actions-row">
+            <a class="cta-btn"
+               href="${pageContext.request.contextPath}/search.jsp">
+              Cerca voli
+            </a>
+          </div>
+        </div>
       </div>
     </c:when>
 
     <c:otherwise>
       <div class="card">
         <div class="card-body">
+
           <table class="results-table">
             <thead>
               <tr>
@@ -51,7 +62,7 @@
                   <td class="actions">
                     <a class="btn btn-danger"
                        href="${pageContext.request.contextPath}/RimuoviDalCarrelloServlet?id=${v.id}">
-                       Rimuovi
+                      Rimuovi
                     </a>
                   </td>
                 </tr>
@@ -60,13 +71,22 @@
           </table>
 
           <div class="actions-row">
-            <a class="btn" href="${pageContext.request.contextPath}/search.jsp">Continua a cercare</a>
-            <a class="cta-btn" href="${pageContext.request.contextPath}/checkout.jsp">Procedi al checkout</a>
+            <a class="btn"
+               href="${pageContext.request.contextPath}/search.jsp">
+              Continua a cercare
+            </a>
+            <a class="cta-btn"
+               href="${pageContext.request.contextPath}/checkout.jsp">
+              Procedi al checkout
+            </a>
           </div>
+
         </div>
       </div>
     </c:otherwise>
+
   </c:choose>
+
 </main>
 
 <%@ include file="footer.jsp" %>
