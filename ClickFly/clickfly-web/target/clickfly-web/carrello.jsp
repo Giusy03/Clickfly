@@ -20,71 +20,43 @@
   </section>
 
   <c:choose>
-
     <c:when test="${empty sessionScope.carrello}">
-      <div class="card">
-        <div class="card-body empty-state">
+      <div class="card empty-state">
+        <div class="card-body">
           <h2>Il carrello è vuoto</h2>
           <p>Aggiungi un viaggio dal catalogo per continuare.</p>
-
           <div class="actions-row">
-            <a class="cta-btn"
-               href="${pageContext.request.contextPath}/search.jsp">
-              Cerca voli
-            </a>
+            <a class="cta-btn" href="${pageContext.request.contextPath}/search.jsp">Cerca voli</a>
           </div>
         </div>
       </div>
     </c:when>
 
     <c:otherwise>
-      <div class="card">
-        <div class="card-body">
-
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Destinazione</th>
-                <th>Compagnia</th>
-                <th>Prezzo</th>
-                <th>Posti</th>
-                <th>Azioni</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <c:forEach var="v" items="${sessionScope.carrello}">
-                <tr>
-                  <td>${v.destinazione}</td>
-                  <td>${v.compagniaAerea}</td>
-                  <td>€${v.prezzo}</td>
-                  <td>${v.postiSelezionati}</td>
-                  <td class="actions">
-                    <a class="btn btn-danger"
-                       href="${pageContext.request.contextPath}/RimuoviDalCarrelloServlet?id=${v.id}">
-                      Rimuovi
-                    </a>
-                  </td>
-                </tr>
-              </c:forEach>
-            </tbody>
-          </table>
-
-          <div class="actions-row">
-            <a class="btn"
-               href="${pageContext.request.contextPath}/search.jsp">
-              Continua a cercare
-            </a>
-            <a class="cta-btn"
-               href="${pageContext.request.contextPath}/checkout.jsp">
-              Procedi al checkout
-            </a>
+      <div class="cards-grid">
+        <c:forEach var="v" items="${sessionScope.carrello}">
+          <div class="card">
+            <div class="card-body">
+              <h3>${v.descrizione}</h3>
+              <p><strong>Compagnia:</strong> ${v.compagnia}</p>
+              <p><strong>Prezzo:</strong> €${v.prezzo}</p>
+              <p><strong>Quantità:</strong> ${v.quantita}</p>
+              <div class="actions-row">
+                <form action="${pageContext.request.contextPath}/rimuovi-dal-carrello" method="get" style="display:inline;">
+                  <input type="hidden" name="id" value="${v.voloId}">
+                  <button type="submit" class="btn btn-danger">Rimuovi</button>
+                </form>
+              </div>
+            </div>
           </div>
+        </c:forEach>
+      </div>
 
-        </div>
+      <div class="actions-row" style="margin-top: 20px;">
+        <a class="btn" href="${pageContext.request.contextPath}/search.jsp">Continua a cercare</a>
+        <a class="cta-btn" href="${pageContext.request.contextPath}/checkout.jsp">Procedi al checkout</a>
       </div>
     </c:otherwise>
-
   </c:choose>
 
 </main>

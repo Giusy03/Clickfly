@@ -1,4 +1,5 @@
 com\clickfly\util\DBManager.class
+com\clickfly\servlets\RimuoviDalCarrelloServlet.class
 com\clickfly\servlets\RegisterServlet.class
 com\clickfly\servlets\AggiungiAlCarrelloServlet.class
 com\clickfly\servlets\RequestDispatcher.class

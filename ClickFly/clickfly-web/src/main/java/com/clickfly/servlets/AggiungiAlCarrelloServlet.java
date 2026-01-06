@@ -1,20 +1,17 @@
 package com.clickfly.servlets;
 
 import com.clickfly.model.CarrelloItem;
+import com.clickfly.model.Volo;
+import com.clickfly.dao.VoloDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import javax.servlet.http.*;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/aggiungi-carrello")
+@WebServlet("/aggiungi-al-carrello")
 public class AggiungiAlCarrelloServlet extends HttpServlet {
 
     @Override
@@ -24,17 +21,20 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         if (session.getAttribute("utente") == null) {
-            response.sendRedirect("login.jsp?error=Devi effettuare il login");
+            response.sendRedirect("login.jsp?error=Devi effettuare il login per aggiungere al carrello");
             return;
         }
 
-        int voloId = Integer.parseInt(request.getParameter("id"));
-        String descrizione = request.getParameter("descrizione");
-        String compagnia = request.getParameter("compagnia");
-        BigDecimal prezzo = new BigDecimal(request.getParameter("prezzo"));
+        int idVolo = Integer.parseInt(request.getParameter("idVolo"));
 
-        List<CarrelloItem> carrello =
-                (List<CarrelloItem>) session.getAttribute("carrello");
+        Volo volo = VoloDAO.getById(idVolo);
+
+        if (volo == null) {
+            response.sendRedirect("search.jsp?error=Volo non trovato");
+            return;
+        }
+
+        List<CarrelloItem> carrello = (List<CarrelloItem>) session.getAttribute("carrello");
 
         if (carrello == null) {
             carrello = new ArrayList<>();
@@ -42,7 +42,7 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
 
         boolean trovato = false;
         for (CarrelloItem item : carrello) {
-            if (item.getVoloId() == voloId) {
+            if (item.getVoloId() == idVolo) {
                 item.incrementaQuantita();
                 trovato = true;
                 break;
@@ -50,10 +50,20 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
         }
 
         if (!trovato) {
-            carrello.add(new CarrelloItem(voloId, descrizione, compagnia, prezzo));
+            String descrizione = volo.getCittaPartenza() + " → " + volo.getCittaArrivo();
+
+            CarrelloItem nuovo = new CarrelloItem(
+                volo.getId(),
+                descrizione,
+                volo.getCompagnia(),
+                volo.getPrezzo()
+            );
+
+            carrello.add(nuovo);
         }
 
         session.setAttribute("carrello", carrello);
+
         response.sendRedirect("carrello.jsp");
     }
 }
