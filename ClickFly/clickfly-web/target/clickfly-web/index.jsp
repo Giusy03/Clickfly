@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>ClickFly - Home</title>
-    <!-- Link CSS corretto -->
     <link rel="stylesheet" type="text/css" href="/clickfly-web/css/style.css">
 </head>
 <body>

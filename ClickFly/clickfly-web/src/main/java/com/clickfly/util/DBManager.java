@@ -11,8 +11,8 @@ public class DBManager {
            + "&allowPublicKeyRetrieval=true"
            + "&serverTimezone=UTC";
 
-    private static final String USER = "root";      // cambia se necessario
-    private static final String PASSWORD = "pennare77a";      // metti la tua password
+    private static final String USER = "root";
+    private static final String PASSWORD = "pennare77a";
 
     static {
         try {

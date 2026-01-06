@@ -32,14 +32,13 @@
                 <h2>Azioni</h2>
                 <ul>
                     <li><a href="prenotazioni.jsp">Le mie prenotazioni</a></li>
-                    <li><a href="logout">Logout</a></li>
+                    <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                 </ul>
             </section>
         </c:when>
 
         <c:otherwise>
             <p>Accesso non autorizzato.</p>
-            <a href="login.jsp">Vai al login</a>
         </c:otherwise>
     </c:choose>
 

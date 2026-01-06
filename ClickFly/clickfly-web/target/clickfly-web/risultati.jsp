@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>ClickFly - Risultati della ricerca</title>
-    <!-- Collegamento al CSS -->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
