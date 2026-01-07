@@ -1,4 +1,5 @@
 CLICKFLY — Piattaforma di Prenotazione Voli
+Progetto per il corso di Ingegneria del Software.
 
 ClickFly è una web application Java sviluppata con Servlet, JSP e JDBC che simula una piattaforma completa di ricerca, selezione e prenotazione di voli aerei.
 
