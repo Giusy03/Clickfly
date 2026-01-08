@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS clickfly;
 CREATE DATABASE clickfly;
 USE clickfly;
 
@@ -8,8 +9,10 @@ CREATE TABLE utenti (
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     telefono VARCHAR(20),
-    data_registrazione DATETIME DEFAULT CURRENT_TIMESTAMP
+    data_registrazione DATETIME DEFAULT CURRENT_TIMESTAMP,
+    saldo DECIMAL(10,2) NOT NULL DEFAULT 0
 );
+
 
 CREATE TABLE voli (
     id INT AUTO_INCREMENT PRIMARY KEY,

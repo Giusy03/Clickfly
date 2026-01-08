@@ -28,6 +28,17 @@
                 <p><strong>Registrato il:</strong> ${sessionScope.utente.dataRegistrazione}</p>
             </section>
 
+            <section class="user-wallet">
+                <h2>💰 Portafoglio</h2>
+                <p><strong>Saldo attuale:</strong> € ${sessionScope.utente.saldo}</p>
+
+                <form action="${pageContext.request.contextPath}/ricarica-saldo" method="post">
+                    <label for="importo">Importo da ricaricare:</label>
+                    <input type="number" name="importo" step="0.01" min="1" required>
+                    <button type="submit" class="cta-btn">Ricarica</button>
+                </form>
+            </section>
+
             <section class="user-actions">
                 <h2>Azioni</h2>
                 <ul>

@@ -1,4 +1,5 @@
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\TestDBServlet.java
+C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\dao\UtenteDAO.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\RimuoviDalCarrelloServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\AggiungiAlCarrelloServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\util\DBManager.java
@@ -8,6 +9,7 @@ C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\SearchServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\LoginServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\RegisterServlet.java
+C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\RicaricaSaldoServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\model\CarrelloItem.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\LogoutServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\model\Utente.java
