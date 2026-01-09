@@ -23,7 +23,7 @@
             </div>
             <button type="submit" class="cta-btn">Accedi</button>
         </form>
-        <p>Non hai un account? <a href="register.jsp">Registrati</a></p>
+        <p>Non hai un account? <a href="resgistrati.jsp">Registrati</a></p>
     </main>
 
     <%@ include file="footer.jsp" %>

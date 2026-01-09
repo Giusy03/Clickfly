@@ -42,7 +42,7 @@
             <section class="user-actions">
                 <h2>Azioni</h2>
                 <ul>
-                    <li><a href="prenotazioni.jsp">Le mie prenotazioni</a></li>
+                    <a href="${pageContext.request.contextPath}/prenotazioni">Le mie prenotazioni</a>
                     <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                 </ul>
             </section>

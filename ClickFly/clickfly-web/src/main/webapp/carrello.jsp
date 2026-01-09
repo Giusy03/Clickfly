@@ -62,7 +62,7 @@
 
       <div class="actions-row" style="margin-top: 20px;">
         <a class="btn" href="${pageContext.request.contextPath}/search.jsp">Continua a cercare</a>
-        <a class="cta-btn" href="${pageContext.request.contextPath}/checkout.jsp">Procedi al checkout</a>
+        <a class="cta-btn" href="${pageContext.request.contextPath}/checkout">Procedi al checkout</a>
       </div>
     </c:otherwise>
   </c:choose>

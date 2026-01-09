@@ -3,6 +3,9 @@ C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\RimuoviDalCarrelloServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\AggiungiAlCarrelloServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\util\DBManager.java
+C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\CheckoutServlet.java
+C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\model\Prenotazione.java
+C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\PrenotazioniServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\RequestDispatcher.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\HomeServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\dao\VoloDAO.java
@@ -12,5 +15,6 @@ C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\RicaricaSaldoServlet.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\model\CarrelloItem.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\servlets\LogoutServlet.java
+C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\dao\PrenotazioneDAO.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\model\Utente.java
 C:\Users\fabip\OneDrive\Documenti\GitHub\Clickfly\ClickFly\clickfly-web\src\main\java\com\clickfly\model\Volo.java
