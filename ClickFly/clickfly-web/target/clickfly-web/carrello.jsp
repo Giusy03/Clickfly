@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="it">
@@ -33,14 +34,17 @@
     </c:when>
 
     <c:otherwise>
+      <c:set var="totale" value="0" scope="page"/>
       <div class="cards-grid">
         <c:forEach var="v" items="${sessionScope.carrello}">
           <div class="card">
             <div class="card-body">
               <h3>${v.descrizione}</h3>
               <p><strong>Compagnia:</strong> ${v.compagnia}</p>
-              <p><strong>Prezzo:</strong> €${v.prezzo}</p>
+              <p><strong>Prezzo unitario:</strong> €<fmt:formatNumber value="${v.prezzo}" type="number" minFractionDigits="2" maxFractionDigits="2"/></p>
               <p><strong>Quantità:</strong> ${v.quantita}</p>
+              <p><strong>Totale volo:</strong> €<fmt:formatNumber value="${v.prezzo * v.quantita}" type="number" minFractionDigits="2" maxFractionDigits="2"/></p>
+              <c:set var="totale" value="${totale + (v.prezzo * v.quantita)}" scope="page"/>
               <div class="actions-row">
                 <form action="${pageContext.request.contextPath}/rimuovi-dal-carrello" method="get" style="display:inline;">
                   <input type="hidden" name="id" value="${v.voloId}">
@@ -50,6 +54,10 @@
             </div>
           </div>
         </c:forEach>
+      </div>
+
+      <div class="cart-total" style="margin-top: 20px; font-size: 1.2em; font-weight: bold;">
+        Totale carrello: €<fmt:formatNumber value="${totale}" type="number" minFractionDigits="2" maxFractionDigits="2"/>
       </div>
 
       <div class="actions-row" style="margin-top: 20px;">
