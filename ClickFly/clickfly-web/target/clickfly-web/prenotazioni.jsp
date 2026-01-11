@@ -11,12 +11,12 @@
 
 <main class="container">
 
-<h1>Le mie prenotazioni</h1>
+<h1 style="text-align:center; margin-bottom: 30px;">Le mie prenotazioni</h1>
 
 <c:choose>
 
     <c:when test="${empty prenotazioni}">
-        <p>Non hai ancora effettuato nessuna prenotazione.</p>
+        <p style="text-align:center;">Non hai ancora effettuato nessuna prenotazione.</p>
     </c:when>
 
     <c:otherwise>
@@ -24,11 +24,18 @@
             <c:forEach var="p" items="${prenotazioni}">
                 <div class="card">
                     <div class="card-body">
+
+                        <p style="font-size: 13px; color: #777;">
+                            Codice prenotazione: <strong>#${p.id}</strong>
+                        </p>
+
                         <h3>${p.cittaPartenza} → ${p.cittaArrivo}</h3>
+
                         <p><strong>Compagnia:</strong> ${p.compagnia}</p>
                         <p><strong>Data prenotazione:</strong> ${p.dataPrenotazione}</p>
                         <p><strong>Posti:</strong> ${p.numeroPasseggeri}</p>
                         <p><strong>Totale:</strong> €${p.prezzoTotale}</p>
+
                     </div>
                 </div>
             </c:forEach>
