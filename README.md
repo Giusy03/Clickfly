@@ -31,20 +31,26 @@ Tutto l’accesso al database avviene tramite JDBC usando PreparedStatement per 
 
 Controller (Servlet)
 Gestiscono tutta la logica applicativa:
-- CercaVoliServlet → gestisce la ricerca voli
+- HomeServlet → gestisce la pagina home
+- SearchServlet → gestisce la ricerca voli
 - AggiungiAlCarrelloServlet → aggiunge un volo al carrello in sessione
 - RimuoviDalCarrelloServlet → rimuove un volo dal carrello
+- RegisterServlet → registrazione utente
 - LoginServlet → autenticazione utente
 - LogoutServlet → invalidazione sessione
 - CheckoutServlet → gestione prenotazione
+- PrenotazioniServlet → gestisce visualizzazione prenotazioni
+- RicaricaSaldoServlet → ricarica il saldo dell'utente
 
 View (JSP)
 - index.jsp → home page
 - search.jsp → ricerca voli
 - risultati.jsp → risultati della ricerca
 - carrello.jsp → gestione carrello
+- registrati.jsp → registrazione utente 
 - login.jsp → login utente
 - areaUtente.jsp → area personale
+- prenotazioni.jsp → visualizzazione prenotazioni effettuate
 
 Le JSP usano:
 - JSTL
