@@ -6,8 +6,6 @@ com\clickfly\servlets\RicaricaSaldoServlet.class
 com\clickfly\model\Prenotazione.class
 com\clickfly\servlets\RegisterServlet.class
 com\clickfly\servlets\AggiungiAlCarrelloServlet.class
-com\clickfly\servlets\RequestDispatcher.class
-com\clickfly\servlets\TestDBServlet.class
 com\clickfly\servlets\LoginServlet.class
 com\clickfly\model\Volo.class
 com\clickfly\model\Utente.class
